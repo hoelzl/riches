@@ -1,9 +1,14 @@
-# GRASP Adventure
+# RICHES
 
-This is a project for the GRASP Adventure game. It is a game that is designed to
-help teach the GRASP principles of object-oriented design.
+RICHES is the RAGS-Inspired Customizable Hybrid Engine for Storytelling.
 
-## Getting Started
+RICHES is derived from the grasp-adventure example project, that I use to teach
+object-oriented design principles using the GRASP principles. The goal of the
+RICHES project is to take this example project and turn it (eventually) into a
+somewhat usable game engine for creating simple adventure and role-playing
+games.
+
+## Developing RICHES
 
 To get started, you will need to have Node.js installed. You can download it from
 [the Node.js website](https://nodejs.org/).
@@ -18,7 +23,7 @@ npm run dev
 This will install the dependencies and start the development server. You can then
 open your browser to [http://localhost:5173](http://localhost:5173) to see the game.
 
-## Building the Game
+### Building the Game
 
 To build the game, you can run the following command:
 
@@ -29,7 +34,7 @@ npm run build
 This will create a `dist` folder with the built game. You can then serve this folder
 with any static file server.
 
-## Running Tests
+### Running Tests
 
 To run the tests, you can run the following command:
 
@@ -37,9 +42,13 @@ To run the tests, you can run the following command:
 npm test
 ```
 
-# React + TypeScript + Vite
+The following is the information provided by the Vite template that this project
+is based on:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## The Template: React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and
+some ESLint rules.
 
 Currently, two official plugins are available:
 
@@ -48,7 +57,8 @@ Currently, two official plugins are available:
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+If you are developing a production application, we recommend updating the
+configuration to enable type aware lint rules:
 
 - Configure the top-level `parserOptions` property like this:
 
