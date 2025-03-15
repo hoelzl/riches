@@ -1,0 +1,260 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Merriweather Bold';
+    src: url('assets/fonts/Merriweather-Bold.ttf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato Regular';
+    src: url('assets/fonts/Lato-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato Black';
+    src: url('assets/fonts/Lato-Black.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato Bold';
+    src: url('assets/fonts/Lato-Bold.ttf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato Light';
+    src: url('assets/fonts/Lato-Light.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.gameContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.fullWidth {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.overlay {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.topOverlay {
+    top: 0;
+    position: absolute;
+    text-align: center;
+    font-family: "Merriweather Bold", serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.75);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+.topOverlay h1 {
+    margin: 10px 0 50px 0;
+}
+
+.bottomContent {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    column-gap: 20px;
+    justify-content: center;
+    place-items: center;
+    align-items: end;
+    width: 100%;
+    bottom: 2%;
+    position: absolute;
+    padding: 0 30px; /* Compensate for the column gap */
+}
+
+.movementActions {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    place-items: center;
+    align-items: stretch;
+}
+
+
+.movementActions .directionButton {
+    justify-content: center;
+    min-width: 80px;
+}
+
+@media (max-width: 768px) {
+    .movementActions .directionButton {
+        min-width: 70px;
+    }
+}
+
+@media (max-width: 640px) {
+    .movementActions .directionButton {
+        min-width: 65px;
+    }
+}
+
+@media (max-width: 512px) {
+    .movementActions .directionButton {
+        min-width: 55px;
+    }
+}
+
+.north{}
+.south{}
+.west{}
+.east{}
+
+.directionButton.north {
+    grid-column: 3 / span 3;
+    grid-row: 1;
+}
+
+.directionButton.south {
+    grid-column: 3 / span 3;
+    grid-row: 3;
+}
+
+.directionButton.west {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+}
+
+.directionButton.east {
+    grid-column: 5 / span 3;
+    grid-row: 2;
+}
+
+.descriptionBox {
+    grid-column: 2;
+    height: 200px;
+    /*min-height: 200px;*/
+    /*max-height: 300px;*/
+    overflow: auto;
+    backdrop-filter: blur(5px) saturate(60%);
+    border: 8px solid transparent;
+    border-image: url('assets/ui/borders/panel-transparent-center-000.png') 30;
+    /*filter: opacity(0.85);*/
+}
+
+.descriptionText {
+    font-family: "Lato Regular", sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 10px 20px;
+}
+
+@media (max-width: 1024px) {
+    .descriptionText {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .descriptionText {
+        font-size: 14px;
+    }
+}
+
+
+.otherActions {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: stretch;
+    min-height: 200px;
+    /*background: gold;*/
+    width: 80%;
+}
+
+.otherActions .button {
+    width: 100%;
+    height: auto; /* Adjust based on content */
+}
+
+.button {
+    border: 8px solid transparent;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    font-family: "Lato Black", sans-serif;
+    font-size: 12px;
+    padding: 4px;
+    border-image: url('assets/ui/borders/panel-transparent-border-000.png') 30 fill;
+    filter: opacity(0.8);
+}
+
+.button:hover {
+    border-image: url('assets/ui/borders/panel-transparent-border-001.png') 30 fill;
+    filter: opacity(1.0);
+}
+
+.button:active {
+    border-image: url('assets/ui/borders/panel-transparent-border-002.png') 30 fill;
+}
+
+.button:disabled {
+    border-image: url('assets/ui/borders/panel-transparent-border-003.png') 30 fill;
+    font-family: "Lato Regular", sans-serif;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.disabled {
+    pointer-events: none;
+    filter: brightness(40%);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: hsl(0, 0%, 50%);
+    filter: alpha(opacity=60);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 30%);
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 20%);
+}
